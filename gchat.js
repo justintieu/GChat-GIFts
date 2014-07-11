@@ -1,10 +1,11 @@
 (function() {
 	$(document).bind('DOMSubtreeModified',function(){	
 		var a = document.getElementsByTagName("a");
+		var imageTypes = ['.gif', '.jpg', '.png'];
 		for(var i = 0; i < a.length; i++) { 
-			if(a[i].href.indexOf(".gif") > -1 && a[i].parentNode.innerHTML.indexOf("<img") == -1) { 
+			if(RegExp(imageTypes.join('|')).exec(a[i].href) && a[i].parentNode.innerHTML.indexOf("<img") == -1) { 
 				a[i].parentNode.innerHTML = "<a href=" + a[i].href + "><img src=" + a[i].href + " width=200/></a>";
 			} 	
 		}
 	})
-}()); 
+}());
