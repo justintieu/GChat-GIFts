@@ -1,4 +1,4 @@
-GIFts
+GChat GIF(t)s
 =====
 
 Allow image urls to become embed within Google Chat for a better user experience
